@@ -4,8 +4,9 @@ import Contact from "../Contact";
 import { ArrowIcon } from "../Svg";
 import { Image, UserImage } from "../UserImage";
 import Social from "../Social";
+// import { useRef } from "react";
 
-const Home = () => {
+const Home = ({aboutRef,contactRef}) => {
   const User = [
     {
       img: "https://static.wixstatic.com/media/c837a6_e21fca002a9241b28c3d472772263a18~mv2.png/v1/fill/w_279,h_157,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/c837a6_e21fca002a9241b28c3d472772263a18~mv2.png",
@@ -90,9 +91,10 @@ const Home = () => {
     // },
   ];
   return (
+    
     <div>
       <div>
-        <div className="grid grid-cols-2 bg-white">
+        <div className="grid grid-cols-2 bg-stone-100">
           <div className="relative bg-[#365150] w-[600px] h-[800px]">
             <div className="absolute -right-20 -bottom-32 text-white ">
               <div>
@@ -114,20 +116,20 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="bg-white">
+          <div className="bg-stone-100">
             <Image />
           </div>
         </div>
-        <div className="pt-[300px] bg-white">
+        <div className="pt-[300px] bg-stone-100" ref={aboutRef}>
           <About />
         </div>
       </div>
       <div className="h-[60vh]" />
-      <div className="h-screen bg-white py-20">
-        <h1 className="text-[#40251B] text-6xl font-semibold text-center">
+      <div className=" bg-stone-100 py-16">
+        <h1 className="text-[#40251B] text-6xl font-semibold text-center pt-8">
           Our Services
         </h1>
-        <div className="text-[#40251B] grid grid-cols-3 w-1/2 mx-auto py-20">
+        <div className="text-[#40251B] grid grid-cols-3 w-1/2 mx-auto pt-20">
           {User?.map((item) => (
             <div className="">
               {" "}
@@ -148,11 +150,11 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="bg-white mx-auto ">
-        <h1 className="text-[#40251B] text-center pl-56 text-6xl font-semibold">
+      <div className="bg-stone-100 mx-auto pt-20">
+        <h1 className="text-[#40251B] w-1/2 mx-auto  pl-56 text-6xl font-semibold">
           Recent Projects
         </h1>{" "}
-        <div className="grid grid-cols-3 pl-96 pt-20">
+        <div className="grid grid-cols-3 w-1/2  mx-auto pt-20">
           {Catalog?.map((item) => (
             <div className="text-[#40251B] pb-10 ">
               <div className="">
@@ -171,16 +173,16 @@ const Home = () => {
               </button>
             </div>
           ))}
-          <div className="pt-10">
-            <button className = "text-[#40251B] px-10 py-2 mb-8 flex items-center  border border-[#40251B] ">
+        </div>
+          <div className="py-10 text-center">
+            <button className = "text-[#40251B] px-10 py-2 mb-8   border border-[#40251B] ">
               View all Projects
             </button>
           </div>
-        </div>
       </div>
-
-      <Contact />
-      <Social />
+<div ref={contactRef}>
+      <Contact /></div>
+      <div className=""><Social /></div>
     </div>
   );
 };

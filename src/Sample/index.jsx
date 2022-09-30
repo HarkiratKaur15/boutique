@@ -1,14 +1,23 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Routes, Route, NavLink } from "react-router-dom";
 import Home from "./Home";
 import Portfolio from "./Portfolio";
-import About from "./About";
+
 import Contact from "./Contact";
 import LogIn from "./LogIn";
 // import { Image, UserImage } from "./UserImage";
 import {  UserIcon } from "./Svg";
 
 const Sample = () => {
+  const aboutRef = useRef(null);
+  const contactRef = useRef(null);
+  const handle = (ref) => {
+    window.scrollTo({
+      top: ref?.offsetTop,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     // <div className="grid grid-cols-2">
     //   <div className="relative">
@@ -112,7 +121,7 @@ const Sample = () => {
     //   </div>
     // </div>
     <div>
-      <div className="grid grid-cols-2 bg-white">
+      <div className="grid grid-cols-2 bg-stone-100">
         <div className="relative bg-[#365150] w-[600px]">
           <div className="flex pt-10 pl-28 gap-4 absolute top-0 left-0  text-white">
             <svg
@@ -142,7 +151,7 @@ const Sample = () => {
           </div>
         </div>
 
-        <div className="sticky bg-white">
+        <div className="sticky bg-stone-100">
           <ul className="flex font-light text-sm py-12">
             <NavLink
               to="/"
@@ -161,20 +170,20 @@ const Sample = () => {
               <li className="px-10">Portfolio</li>
             </NavLink>
             <NavLink
-              to="/about"
+              // to="/about"
               className={({ isActive }) =>
                 isActive ? " font-light text-slate-500" : ""
               }
             >
-              <li className="px-10">About</li>
+              <li className="px-10" onClick={()=>handle(aboutRef.current)}>About</li>
             </NavLink>
             <NavLink
-              to="/contact"
+              // to="/contact"
               className={({ isActive }) =>
                 isActive ? " font-light text-slate-500" : ""
               }
             >
-              <li className="px-10">Contact</li>
+              <li className="px-10" onClick={()=>handle(contactRef.current)}>Contact</li>
             </NavLink>
             <NavLink
               to="/contact"
@@ -191,9 +200,8 @@ const Sample = () => {
           </div>
           </div>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home aboutRef={aboutRef} contactRef={contactRef}/>} />
             <Route path="/Portfolio" element={<Portfolio />} />
-            <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/LogIn" element={<LogIn />} />
           </Routes>

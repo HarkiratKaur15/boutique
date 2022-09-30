@@ -14,47 +14,22 @@ const Social = () => {
   ];
   return (
     <>
-    <div className="bg-white flex justify-center items-center gap-60 py-20">
-      <div className="flex gap-4">
-        <svg
-          preserveAspectRatio="xMidYMid meet"
-          data-box="29 30.5 147.9 147.9"
-          viewBox="29 30.5 147.9 147.9"
-          className="w-10 h-10 text-white"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g>
-            <path
-              fill="#c9917d"
-              d="M143.5 104.5c0 22.423-18.177 40.6-40.6 40.6-22.423 0-40.6-18.177-40.6-40.6 0-22.423 18.177-40.6 40.6-40.6 22.423 0 40.6 18.177 40.6 40.6z"
-              data-color="1"
-            ></path>
-            <path
-              d="M176.9 175.6l-10.3-10.3V40.9H42.2L31.8 30.5 29 33.4l10.3 10.3v124.4h124.4l10.3 10.3 2.9-2.8zM162.5 44.9v116.4L46.2 44.9h116.3zM43.4 164.1V47.7l116.4 116.4H43.4z"
-              fill="#4c2518"
-              data-color="2"
-            ></path>
-          </g>
-        </svg>
-
-        <h1 className="font-semibold text-sm font-light pt-1">
-          AURA<h1>BOUTIQUE</h1>
-        </h1>
+      <div className="bg-stone-100 flex justify-center items-center gap-60 py-20">
+        <div className="bg-stone-100 grid grid-cols-3 gap-20 ">
+          {Word?.map((item) => (
+            <div className="text-[#40251B]  ">
+              {" "}
+              <div className="font-bold">{item?.title}</div>
+              <div className="w-1/2 pt-4 font-light">{item?.paragraph}</div>
+            </div>
+          ))}
+        </div>
       </div>
 
-      <div className="bg-white grid grid-cols-3 gap-20 ">
-        {Word?.map((item) => (
-          <div className="text-[#40251B]  ">
-            {" "}
-            <div className="font-bold">{item?.title}</div>
-            <div className="w-1/2 pt-4 font-light">{item?.paragraph}</div>
-           
-          </div>
-        ))}
-        </div>
-    </div>
-         <div  className=" bg-white pb-20 text-center text-sm font-light"><h1 >© 2023 by Aura Boutique. Proudly created with Wix.com</h1></div>
-         </>
+      <div className=" bg-stone-100 pb-20 text-center text-sm font-light">
+        <h1>© 2023 by Aura Boutique. Proudly created with Wix.com</h1>
+      </div>
+    </>
   );
 };
 

@@ -46,3 +46,39 @@
   background-position: center;
 }
 
+.react-datepicker:not(.position-top) .react-datepicker-container .react-datepicker-top:after {
+  border-bottom-color: white !important;
+  border-width: 5px;
+  margin-left: -5px;
+}
+
+.react-datepicker .react-datepicker-container .react-datepicker-top {
+  text-align: center;
+  background: linear-gradient(white ,white) !important;
+  color: black !important;
+  border-top: 1px solid white !important;
+  border-left: 1px solid white !important;
+  border-right: 1px solid white !important;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
+.react-datepicker .react-datepicker-container .react-datepicker-top .display .react-datepicker-button.button-left {
+  font-size: 13px;
+  padding: 4px 16px;
+  border-top-left-radius: 2px;
+}
+
+.react-datepicker .react-datepicker-container .react-datepicker-top .display .react-datepicker-button {
+  text-decoration: none;
+  padding: 4px;
+  text-align: center;
+  font-size: 15px;
+  letter-spacing: .5px;
+  cursor: pointer;
+}
+
+.react-datepicker .react-datepicker-container .react-datepicker-top .display {
+  height: 35px;
+}
+

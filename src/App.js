@@ -2,6 +2,7 @@
 import './App.css';
 // import Form from './Form';
 import Sample from './Sample';
+// import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 
 function App() {
 

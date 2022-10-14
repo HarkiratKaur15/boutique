@@ -20,7 +20,7 @@ const Input = ({
         placeholder={placeholder}
         onChange={onChange}
         onClick={onClick}
-        className={"bg-[#365150] border-b pb-2 pt-5"}
+        className={"bg-[#365150] border-b pb-2 pt-5 "}
       />
     </div>
   );

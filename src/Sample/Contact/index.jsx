@@ -21,7 +21,7 @@ const Contact = () => {
       <h1 className="text-6xl pt-10 pb-20 text-center font-semibold">
         Let's Work Together
       </h1>
-      <div className="flex items-center justify-center pt-8 font-light  gap-8">
+      <div className="md:flex items-center justify-center pt-8 font-light pl-2 gap-8">
         <div>
           <h1>First Name</h1>
           <Input onChange={handleChange} value={firstName} name="firstName" />
@@ -31,7 +31,7 @@ const Contact = () => {
           <Input onChange={handleChange} value={lastName} name="lastName" />
         </div>
       </div>
-      <div className="flex items-center justify-center pt-8  font-light  gap-8">
+      <div className="md:flex items-center justify-center pt-8 pl-2  font-light  gap-8">
         <div>
           <h1>Email *</h1>
           <Input onChange={handleChange} value={email} name="email" />
@@ -41,7 +41,7 @@ const Contact = () => {
           <Input onChange={handleChange} value={phone} name="phone" />
         </div>
       </div>
-      <div className="pl-[768px] pt-4 font-light  ">
+      <div className="xl:pl-[768px] pt-4 font-light pl-2 w-3/4">
         <h1>Leave us a message...</h1>
         <Input
           onChange={handleChange}
@@ -49,9 +49,9 @@ const Contact = () => {
           name="leaveUsMessage"
         />
       </div>
-      <div className="pl-[800px]">
+      <div className="mx-auto ">
         <button
-          className="py-2 px-28 border border-white my-5"
+          className="py-2 px-28 border border-white mt-10 mb-20"
           onClick={() => {
             const payload = {
               firstName,
